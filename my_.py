@@ -5,7 +5,7 @@ key = b'13SkL31jRAq9Qujdt2Pyfy4-ma1YPc2Tmp7NMi-2qtY='
 token = b'gAAAAABk_1S2kDTDVPL2T9Up85MoGRHQK2XomfLIr9ImOhIACha9FghjMcq3hf3ddGjdaTd6X49DjJ1GK6qZAS_4c4UwT_3fs9XEYtW0ki19aO05_j45vyEB7sLtd7I0aS_7kKWcHrgw'
 
 
-def token():
+def my_token():
     return decrypt_text(token, key)
 
 

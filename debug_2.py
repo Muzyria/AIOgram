@@ -1,11 +1,11 @@
 import json
-import my_
+from my_ import my_token
 import requests
 import time
 
 
 API_URL: str = 'https://api.telegram.org/bot'
-BOT_TOKEN: str = ''
+BOT_TOKEN: str = my_token()
 API_CATS_URL: str = 'https://api.thecatapi.com/v1/images/search'
 TEXT: str = 'Ура! Классный апдейт!'
 ERROR_TEXT: str = 'Здесь должна была быть картинка с котиком :('
