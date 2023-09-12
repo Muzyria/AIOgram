@@ -1,9 +1,10 @@
 from aiogram import Bot, Dispatcher
 from aiogram.filters import Command
 from aiogram.types import Message
+from my_ import my_token
 
 # Вместо BOT TOKEN HERE нужно вставить токен вашего бота, полученный у @BotFather
-API_TOKEN: str = ''
+API_TOKEN: str = my_token()
 
 # Создаем объекты бота и диспетчера
 bot: Bot = Bot(token=API_TOKEN)
@@ -19,6 +20,7 @@ async def process_start_command(message: Message):
 # Этот хэндлер будет срабатывать на команду "/help"
 @dp.message(Command(commands=['help']))
 async def process_help_command(message: Message):
+
     await message.answer('Напиши мне что-нибудь и в ответ '
                          'я пришлю тебе твое сообщение')
 
@@ -27,6 +29,7 @@ async def process_help_command(message: Message):
 # кроме команд "/start" и "/help"
 @dp.message()
 async def send_echo(message: Message):
+    # [print(i) for i in message]
     await message.reply(text=message.text)
 
 
