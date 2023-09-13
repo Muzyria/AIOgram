@@ -28,10 +28,26 @@ async def process_help_command(message: Message):
 
 # Этот хэндлер будет срабатывать на отправку боту фото
 async def send_photo_echo(message: Message):
-    # print(message.photo[0])
-
-
+    print(message)
     await message.reply_photo(message.photo[0].file_id)
+
+
+# Этот хэндлер будет срабатывать на отправку боту голосовым сообщением
+async def send_voice_echo(message: Message):
+    print(message)
+    await message.answer_voice(message.voice.file_id)
+
+
+# Этот хэндлер будет срабатывать на отправку боту стикер
+async def send_sticker_echo(message: Message):
+    print(message)
+    await message.answer_sticker(message.sticker.file_id)
+
+
+# Этот хэндлер будет срабатывать на отправку боту видео
+async def send_video_echo(message: Message):
+    print(message)
+    await message.answer_video(message.video.file_id)
 
 
 # Этот хэндлер будет срабатывать на любые ваши текстовые сообщения,
@@ -44,6 +60,10 @@ async def send_echo(message: Message):
 dp.message.register(process_start_command, Command(commands='start'))
 dp.message.register(process_help_command, Command(commands='help'))
 dp.message.register(send_photo_echo, F.content_type == ContentType.PHOTO)
+dp.message.register(send_voice_echo, F.content_type == ContentType.VOICE)
+dp.message.register(send_sticker_echo, F.content_type == ContentType.STICKER)
+dp.message.register(send_video_echo, F.content_type == ContentType.VIDEO)
+
 dp.message.register(send_echo)
 
 
