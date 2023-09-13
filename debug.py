@@ -1,8 +1,8 @@
 import requests
 import json
+from my_ import my_token
 
-
-my_token = ''
+my_token = my_token()
 chat_id = ''
 first_name = ''
 text = 'Hello '

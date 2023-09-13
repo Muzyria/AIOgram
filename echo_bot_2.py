@@ -1,3 +1,4 @@
+import requests
 from aiogram import Bot, Dispatcher
 from aiogram.filters import Command
 from aiogram.types import Message
@@ -27,7 +28,9 @@ async def process_help_command(message: Message):
 
 # Этот хэндлер будет срабатывать на отправку боту фото
 async def send_photo_echo(message: Message):
-    print(message.photo[0])
+    # print(message.photo[0])
+
+
     await message.reply_photo(message.photo[0].file_id)
 
 
@@ -35,8 +38,6 @@ async def send_photo_echo(message: Message):
 # кроме команд "/start" и "/help"
 async def send_echo(message: Message):
     await message.reply(text=message.text)
-
-
 
 
 # Регистрируем хэндлеры
