@@ -39,16 +39,14 @@ class NumbersInMessage(BaseFilter):
 # начинается с фразы "найди числа" и в нем есть числа
 @dp.message(F.text.lower().startswith('найди числа'),   NumbersInMessage())
 async def process_if_numbers(message: Message, numbers: list[int]):
-    await message.answer(
-            text=f'Нашел: {", ".join(str(num) for num in numbers)}')
+    await message.answer(text=f'Нашел: {", ".join(str(num) for num in numbers)}')
 
 
 # Этот хэндлер будет срабатывать, если сообщение пользователя
 # начинается с фразы "найди числа", но в нем нет чисел
 @dp.message(F.text.lower().startswith('найди числа'))
 async def process_if_not_numbers(message: Message):
-    await message.answer(
-            text='Не нашел что-то :(')
+    await message.answer(text='Не нашел что-то :(')
 
 # ...
 
