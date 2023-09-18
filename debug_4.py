@@ -1,10 +1,13 @@
 
-# def anonymous_filter(data):
-#     return len(__import__('re').findall(r'[яЯ]', data)) >= 23
+class My:
+    def __init__(self) -> None:
+        pass
 
+    def __call__(self, *args, **kwargs):
+        return f'--->'
 
-anonymous_filter = lambda x: len(__import__('re').findall(r'[яЯ]', x)) >= 23
+first = My()
 
+print(first)
+print(first())
 
-print(anonymous_filter('Я - последняя буква в алфавите!'))
-print(anonymous_filter('яяяяяяяяяяяяяяяяяяяяяяяя, яяяяяяяяяяяяяяяя и яяяяяяяя тоже!'))
