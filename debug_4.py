@@ -1,8 +1,10 @@
 
-def custom_filter(data):
-    # return sum([i for i in data if type(i) == int and (i % 7 == 0)]) < 83
-    return sum(filter(lambda x: type(x) == int and (x % 7 == 0), data)) < 83
+# def anonymous_filter(data):
+#     return len(__import__('re').findall(r'[яЯ]', data)) >= 23
 
-some_list = [7, 14, 28, 32, 32, 56]
 
-print(custom_filter(some_list))
+anonymous_filter = lambda x: len(__import__('re').findall(r'[яЯ]', x)) >= 23
+
+
+print(anonymous_filter('Я - последняя буква в алфавите!'))
+print(anonymous_filter('яяяяяяяяяяяяяяяяяяяяяяяя, яяяяяяяяяяяяяяяя и яяяяяяяя тоже!'))
