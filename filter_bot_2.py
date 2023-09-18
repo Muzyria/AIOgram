@@ -28,6 +28,7 @@ class IsAdmin(BaseFilter):
 # Этот хэндлер будет срабатывать, если апдейт от админа
 @dp.message(IsAdmin(admin_ids))
 async def answer_if_admins_update(message: Message):
+    print(message.model_dump_json(indent=4, exclude_none=True))
     await message.answer(text='Вы админ')
 
 
