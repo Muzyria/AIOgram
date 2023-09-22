@@ -3,7 +3,7 @@ print('Это файл', __name__)
 
 
 from ..file_21 import another_some_func
-from ...file_0 import some_var
+from Packs.file_0 import some_var
 
 
 b: int = 4242
