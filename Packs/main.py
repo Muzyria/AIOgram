@@ -2,8 +2,8 @@
 print('Это основной файл main.py, его имя в процессе выполнения программы:', __name__)
 
 
-import pack_2
+from pack_1.file_11 import func_1
+from pack_1.file_12 import a
 
 
-print(dir())
-print(dir(pack_2))
+print(func_1(a))
