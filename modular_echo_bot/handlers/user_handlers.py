@@ -1,8 +1,7 @@
-
-from aiogram.types import Message
 from aiogram.filters import Command, CommandStart
+from aiogram.types import Message
+from ..create_dp import dp
 from ..lexicon.lexicon import LEXICON_RU
-
 
 
 # Этот хэндлер срабатывает на команду /start
