@@ -20,26 +20,30 @@ button_2 = KeyboardButton(text='Огурцов 🥒')
 keyboard = ReplyKeyboardMarkup(keyboard=[[button_1, button_2]], resize_keyboard=True, one_time_keyboard=True)
 
 # Создаем объекты кнопок
-button_1 = KeyboardButton(text='Кнопка 1')
-button_2 = KeyboardButton(text='Кнопка 2')
-button_3 = KeyboardButton(text='Кнопка 3')
-button_4 = KeyboardButton(text='Кнопка 4')
-button_5 = KeyboardButton(text='Кнопка 5')
-button_6 = KeyboardButton(text='Кнопка 6')
-button_7 = KeyboardButton(text='Кнопка 7')
-button_8 = KeyboardButton(text='Кнопка 8')
-button_9 = KeyboardButton(text='Кнопка 9')
+my_buttons = [KeyboardButton(text=f'Кнопка {i}') for i in range(1, 10)]
+
+# button_1 = KeyboardButton(text='Кнопка 1')
+# button_2 = KeyboardButton(text='Кнопка 2')
+# button_3 = KeyboardButton(text='Кнопка 3')
+# button_4 = KeyboardButton(text='Кнопка 4')
+# button_5 = KeyboardButton(text='Кнопка 5')
+# button_6 = KeyboardButton(text='Кнопка 6')
+# button_7 = KeyboardButton(text='Кнопка 7')
+# button_8 = KeyboardButton(text='Кнопка 8')
+# button_9 = KeyboardButton(text='Кнопка 9')
+
 
 # Создаем объект клавиатуры, добавляя в него кнопки
-my_keyboard = ReplyKeyboardMarkup(
-    keyboard=[[button_1, button_2, button_3],
-              [button_4, button_5, button_6],
-              [button_7, button_8, button_9]],
-    resize_keyboard=True
-)
+# my_keyboard = ReplyKeyboardMarkup(
+#     keyboard=[[button_1, button_2, button_3],
+#               [button_4, button_5, button_6],
+#               [button_7, button_8, button_9]],
+#     resize_keyboard=True
+# )
+my_keyboard = ReplyKeyboardMarkup(keyboard=[my_buttons[i:i+3] for i in range(0, 9, 3)],
+                                  resize_keyboard=True)
 
-
-
+print(my_buttons)
 
 # Этот хэндлер будет срабатывать на команду "/start"
 # и отправлять в чат клавиатуру
