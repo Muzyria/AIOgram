@@ -40,6 +40,7 @@ my_keyboard = ReplyKeyboardMarkup(
 
 
 
+
 # Этот хэндлер будет срабатывать на команду "/start"
 # и отправлять в чат клавиатуру
 @dp.message(CommandStart())
