@@ -2,6 +2,8 @@
 from aiogram import Bot, Dispatcher
 from aiogram.filters import CommandStart
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from aiogram import F
+from aiogram.types import CallbackQuery
 from my_ import my_token
 
 # Вместо BOT TOKEN HERE нужно вставить токен вашего бота,
@@ -37,7 +39,16 @@ async def process_start_command(message: Message):
     await message.answer(
         text='Это инлайн-кнопки. Нажми на любую!',
         reply_markup=keyboard)
-    print(message.model_dump_json(indent=4, exclude_none=True))
+    # print(message.model_dump_json(indent=4, exclude_none=True))
+
+
+# Этот хэндлер будет срабатывать на апдейт типа CallbackQuery
+# с data 'big_button_1_pressed' или 'big_button_2_pressed'
+@dp.callback_query(F.data.in_(['big_button_1_pressed',
+                               'big_button_2_pressed']))
+async def process_buttons_press(callback: CallbackQuery):
+    await callback.answer()
+    print(callback.model_dump_json(indent=4, exclude_none=True))
 
 
 if __name__ == '__main__':
