@@ -1,7 +1,7 @@
 
 import random
 
-from ..lexicon.lexicon_ru import LEXICON_RU
+from rock_paper_scissors_bot.lexicon.lexicon_ru import LEXICON_RU
 
 
 # Функция, возвращающая случайный выбор бота в игре
